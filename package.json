@@ -1,0 +1,63 @@
+{
+  "name": "@chainapsis/cosmosjs",
+  "version": "v0.0.3-alpha.3",
+  "homepage": "https://github.com/chainapsis/cosmosjs",
+  "description": "General purpose library for cosmos-sdk",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha -r ts-node/register src/**/**/*.spec.ts src/**/*.spec.ts src/*.spec.ts",
+    "lint": "eslint \"src/**/*\"",
+    "lint-fix": "eslint --fix \"src/**/*\"",
+    "prettier": "find ./src -type f | xargs prettier --check",
+    "prettier-write": "find ./src -type f | xargs prettier --write",
+    "deploy-docs": "typedoc ./src && touch ./docs/.nojekyll && gh-pages --dist docs -m '[ci skip] Update document' --dotfiles"
+  },
+  "pre-commit": [
+    "lint",
+    "prettier"
+  ],
+  "keywords": [
+    "cosmos",
+    "blockchain"
+  ],
+  "author": "chainapsis",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ledgerhq/hw-transport-node-hid": "^5.15.0",
+    "@ledgerhq/hw-transport-u2f": "^4.63.2",
+    "@ledgerhq/hw-transport-webusb": "^4.63.2",
+    "@node-a-team/ts-amino": "0.0.1-alpha.2",
+    "axios": "^0.19.0",
+    "bech32": "^1.1.3",
+    "big-integer": "^1.6.43",
+    "bip32": "^2.0.3",
+    "bip39": "^3.0.2",
+    "buffer": "^5.2.1",
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.2",
+    "ledger-cosmos-js": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/bech32": "^1.1.1",
+    "@types/crypto-js": "^3.1.47",
+    "@types/elliptic": "^6.4.12",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.2",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^6.5.1",
+    "gh-pages": "^2.0.1",
+    "mocha": "^6.1.4",
+    "node-fetch": "^2.5.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.17.1",
+    "ts-node": "^8.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.2"
+  }
+}
